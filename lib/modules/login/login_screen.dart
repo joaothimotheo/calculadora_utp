@@ -1,6 +1,7 @@
 import 'package:calculadora_utp/constant.dart';
 import 'package:calculadora_utp/modules/global_widgets/widget_custom_outlined_button.dart';
 import 'package:calculadora_utp/modules/global_widgets/widget_custom_text_field.dart';
+import 'package:calculadora_utp/modules/resgister/register_screen.dart';
 import 'package:flutter/material.dart';
 
 import '../../theme/style.dart';
@@ -33,7 +34,7 @@ class _LoginScreenState extends State<LoginScreen> {
               _buildTextFieldPassword(),
               const SizedBox(height: 20),
               _buildLoginButton(),
-              const SizedBox(height: 10),
+              const SizedBox(height: 20),
               _buildRegisterButton(),
             ],
           ),
@@ -95,7 +96,18 @@ class _LoginScreenState extends State<LoginScreen> {
     return GestureDetector(
       child: const Text(
         'Não possui um cadastro? Cadastre-se',
+        style: TextStyle(
+          decoration: TextDecoration.underline,
+        ),
       ),
+      onTap: () {
+        Navigator.push(
+          context,
+          MaterialPageRoute(
+            builder: (context) => const RegisterScren(),
+          ),
+        );
+      },
     );
   }
 }
