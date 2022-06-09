@@ -3,7 +3,6 @@ import 'package:calculadora_utp/routes/routes.dart';
 import 'package:get/get.dart';
 
 import 'constant.dart';
-import 'modules/splash/splash_screen.dart';
 import 'package:flutter/material.dart';
 import 'theme/theme.dart';
 
@@ -22,11 +21,5 @@ class MyApp extends StatelessWidget {
       getPages: AppPages.pages,
       initialRoute: Routes.splash,
     );
-    // return MaterialApp(
-    //   debugShowCheckedModeBanner: false,
-    //   title: AppConstant.APP_NAME,
-    //   theme: themeData,
-    //   home: const SplashScreen(),
-    // );
   }
 }

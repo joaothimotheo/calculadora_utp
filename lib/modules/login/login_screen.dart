@@ -1,8 +1,9 @@
 import 'package:calculadora_utp/constant.dart';
 import 'package:calculadora_utp/modules/global_widgets/widget_custom_outlined_button.dart';
 import 'package:calculadora_utp/modules/global_widgets/widget_custom_text_field.dart';
-import 'package:calculadora_utp/modules/resgister/register_screen.dart';
+import 'package:calculadora_utp/routes/routes.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 
 import '../../theme/style.dart';
 
@@ -14,7 +15,6 @@ class LoginScreen extends StatefulWidget {
 }
 
 class _LoginScreenState extends State<LoginScreen> {
-  bool showPassword = true;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -31,11 +31,7 @@ class _LoginScreenState extends State<LoginScreen> {
               const SizedBox(height: 20),
               _buildTextFieldEmail(),
               const SizedBox(height: 20),
-              _buildTextFieldPassword(),
-              const SizedBox(height: 20),
               _buildLoginButton(),
-              const SizedBox(height: 20),
-              _buildRegisterButton(),
             ],
           ),
         ),
@@ -54,60 +50,25 @@ class _LoginScreenState extends State<LoginScreen> {
 
   Widget _buildText() {
     return Text(
-      'Faça Login ou crie sua conta para usar a Calculadora',
+      'Insira o nome da sua equipe para logar.',
       style: poppinsRegular14Black,
     );
   }
 
   Widget _buildTextFieldEmail() {
     return CustomTextField(
-      icon: Icons.person,
-      hint: 'Insira seu nome de usuário',
-      label: 'Usuário',
+      icon: Icons.groups,
+      hint: 'Insira o nome da equipe',
+      label: 'Equipe',
       isPassword: false,
       onPressed: () {},
     );
   }
 
-  Widget _buildTextFieldPassword() {
-    return CustomTextField(
-      icon: Icons.vpn_key,
-      hint: 'Insira sua senha',
-      label: 'Senha',
-      isPassword: true,
-      hidePassword: showPassword ? Icons.visibility : Icons.visibility_off,
-      obscureText: showPassword,
-      onPressed: () {
-        setState(() {
-          showPassword = !showPassword;
-        });
-      },
-    );
-  }
-
   Widget _buildLoginButton() {
     return CustomOutlinedButton(
-      onPressed: () {},
+      onPressed: () => Get.toNamed(Routes.calculator),
       text: 'Entrar',
-    );
-  }
-
-  Widget _buildRegisterButton() {
-    return GestureDetector(
-      child: const Text(
-        'Não possui um cadastro? Cadastre-se',
-        style: TextStyle(
-          decoration: TextDecoration.underline,
-        ),
-      ),
-      onTap: () {
-        Navigator.push(
-          context,
-          MaterialPageRoute(
-            builder: (context) => const RegisterScren(),
-          ),
-        );
-      },
     );
   }
 }
