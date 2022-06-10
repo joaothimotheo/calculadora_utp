@@ -1,11 +1,12 @@
 import 'package:calculadora_utp/constant.dart';
 import 'package:calculadora_utp/modules/global_widgets/widget_custom_outlined_button.dart';
 import 'package:calculadora_utp/modules/global_widgets/widget_custom_text_field.dart';
-import 'package:calculadora_utp/routes/routes.dart';
+import 'package:calculadora_utp/modules/login/login_logic.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
 import '../../theme/style.dart';
+import 'login_state.dart';
 
 class LoginScreen extends StatefulWidget {
   const LoginScreen({Key? key}) : super(key: key);
@@ -15,6 +16,9 @@ class LoginScreen extends StatefulWidget {
 }
 
 class _LoginScreenState extends State<LoginScreen> {
+  final LoginLogic logic = Get.put(LoginLogic());
+  final LoginState state = Get.find<LoginLogic>().state;
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -57,9 +61,12 @@ class _LoginScreenState extends State<LoginScreen> {
 
   Widget _buildTextFieldEmail() {
     return CustomTextField(
+      controller: logic.state.groupController,
+      textInputType: TextInputType.number,
+      textInputAction: TextInputAction.done,
       icon: Icons.groups,
-      hint: 'Insira o nome da equipe',
-      label: 'Equipe',
+      hint: 'Insira o número da equipe',
+      label: 'Equipe:',
       isPassword: false,
       onPressed: () {},
     );
@@ -67,7 +74,7 @@ class _LoginScreenState extends State<LoginScreen> {
 
   Widget _buildLoginButton() {
     return CustomOutlinedButton(
-      onPressed: () => Get.toNamed(Routes.calculator),
+      onPressed: () => logic.getMember(),
       text: 'Entrar',
     );
   }

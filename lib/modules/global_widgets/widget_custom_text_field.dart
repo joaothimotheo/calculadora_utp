@@ -50,6 +50,7 @@ class _CustomTextFieldState extends State<CustomTextField> {
       inputFormatters: widget.textInputFormatter,
       obscureText: widget.obscureText,
       decoration: InputDecoration(
+        prefixText: "Equipe: ",
         prefixIcon: Icon(widget.icon, color: Theme.of(context).primaryColor),
         suffixIcon: widget.isPassword
             ? IconButton(
