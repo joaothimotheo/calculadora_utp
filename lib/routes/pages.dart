@@ -1,3 +1,4 @@
+import 'package:calculadora_utp/modules/home/home_screen.dart';
 import 'package:calculadora_utp/modules/login/login_screen.dart';
 import 'package:calculadora_utp/modules/splash/splash_screen.dart';
 import 'package:calculadora_utp/routes/routes.dart';
@@ -12,6 +13,10 @@ class AppPages {
     GetPage(
       name: Routes.login,
       page: () => const LoginScreen(),
+    ),
+    GetPage(
+      name: Routes.home,
+      page: () => const HomeScreen(),
     ),
   ];
 }

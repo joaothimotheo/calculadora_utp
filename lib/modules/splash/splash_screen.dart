@@ -2,7 +2,9 @@ import 'dart:async';
 
 import 'package:calculadora_utp/constant.dart';
 import 'package:calculadora_utp/modules/login/login_screen.dart';
+import 'package:calculadora_utp/routes/routes.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 
 class SplashScreen extends StatefulWidget {
   const SplashScreen({Key? key}) : super(key: key);
@@ -16,12 +18,7 @@ class _SplashScreenState extends State<SplashScreen> {
   void initState() {
     Timer(
       const Duration(seconds: 2),
-      () => Navigator.push(
-        context,
-        MaterialPageRoute(
-          builder: (context) => const LoginScreen(),
-        ),
-      ),
+      () => Get.toNamed(Routes.login),
     );
     super.initState();
   }

@@ -1,11 +1,13 @@
 import 'dart:developer';
 
 import 'package:calculadora_utp/modules/login/login_state.dart';
+import 'package:calculadora_utp/routes/routes.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
 class LoginLogic extends GetxController {
   final LoginState state = LoginState();
+  var scaffoldKey = GlobalKey<ScaffoldState>();
 
   nextButton() {}
 
@@ -18,8 +20,10 @@ class LoginLogic extends GetxController {
           'Bem Vindos',
           'Equipe ${state.groupName.value}',
           backgroundColor: Colors.green,
+          colorText: Colors.white,
           snackPosition: SnackPosition.BOTTOM,
         );
+        Get.toNamed(Routes.home);
         break;
       case "7":
         state.groupName.value = "Inverga mais não quebra";
@@ -28,8 +32,10 @@ class LoginLogic extends GetxController {
           'Bem Vindos',
           'Equipe ${state.groupName.value}',
           backgroundColor: Colors.green,
+          colorText: Colors.white,
           snackPosition: SnackPosition.BOTTOM,
         );
+        Get.toNamed(Routes.home);
         break;
       case "9":
         state.groupName.value = "Ladeira abaixo";
@@ -38,8 +44,10 @@ class LoginLogic extends GetxController {
           'Bem Vindos',
           'Equipe ${state.groupName.value}',
           backgroundColor: Colors.green,
+          colorText: Colors.white,
           snackPosition: SnackPosition.BOTTOM,
         );
+        Get.toNamed(Routes.home);
         break;
       case "125":
         state.groupName.value = "AWA";
@@ -48,8 +56,10 @@ class LoginLogic extends GetxController {
           'Bem Vindos',
           'Equipe ${state.groupName.value}',
           backgroundColor: Colors.green,
+          colorText: Colors.white,
           snackPosition: SnackPosition.BOTTOM,
         );
+        Get.toNamed(Routes.home);
         break;
       case "72":
         state.groupName.value = "Cavalo de Troia";
@@ -61,6 +71,7 @@ class LoginLogic extends GetxController {
           snackPosition: SnackPosition.BOTTOM,
           colorText: Colors.white,
         );
+        Get.toNamed(Routes.home);
         break;
       default:
         log("Não foi encontrada nenhuma equpe");
@@ -73,5 +84,23 @@ class LoginLogic extends GetxController {
           colorText: Colors.white,
         );
     }
+  }
+
+  void logout() {
+    state.groupName.value = "";
+    state.members.addAll(['Camylla', 'Rodrigo']);
+    state.members.clear();
+    Get.snackbar(
+      'Logout',
+      'Você foi desconectado!',
+      colorText: Colors.white,
+      backgroundColor: Colors.red,
+      snackPosition: SnackPosition.BOTTOM,
+    );
+    Get.offAndToNamed(Routes.login);
+  }
+
+  void openDrawer() {
+    scaffoldKey.currentState?.openDrawer();
   }
 }
