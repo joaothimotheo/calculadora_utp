@@ -1,10 +1,8 @@
 import 'package:calculadora_utp/modules/home/home_state.dart';
 import 'package:get/get.dart';
 
-class HomeController extends GetxController {
-  final HomeState state;
-
-  HomeController({required this.state});
+class HomeLogic extends GetxController {
+  final HomeState state = HomeState();
 
   void getMember() {
     switch (state.groupId.value) {

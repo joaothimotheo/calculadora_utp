@@ -43,6 +43,7 @@ class _CustomTextFieldState extends State<CustomTextField> {
   @override
   Widget build(BuildContext context) {
     return TextFormField(
+      scrollPhysics: const NeverScrollableScrollPhysics(),
       controller: widget.controller,
       validator: widget.validator,
       keyboardType: widget.textInputType,

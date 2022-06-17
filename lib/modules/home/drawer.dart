@@ -1,5 +1,10 @@
-import 'package:calculadora_utp/constant.dart';
+import 'package:calculadora_utp/modules/global_widgets/widget_custom_outlined_button.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
+import 'package:get/get_core/src/get_main.dart';
+
+import 'home_logic.dart';
+import 'home_state.dart';
 
 class MainDrawer extends StatelessWidget {
   const MainDrawer({Key? key, required this.title, required this.members})
@@ -10,6 +15,8 @@ class MainDrawer extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final HomeLogic logic = Get.put(HomeLogic());
+    final HomeState state = Get.find<HomeLogic>().state;
     return Drawer(
       child: ListView(
         padding: EdgeInsets.zero,
@@ -48,6 +55,21 @@ class MainDrawer extends StatelessWidget {
               );
             },
           ),
+          Padding(
+              padding: const EdgeInsets.all(12.0),
+              child: Obx(
+                () => Expanded(
+                  child: CustomOutlinedButton(
+                    text: logic.state.suspension.value
+                        ? "Cálculo angular de suspensão"
+                        : "Cálculo elástica das molas",
+                    onPressed: () {
+                      logic.state.suspension.value =
+                          !logic.state.suspension.value;
+                    },
+                  ),
+                ),
+              ))
         ],
       ),
     );
