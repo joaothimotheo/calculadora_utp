@@ -4,4 +4,5 @@ class AppConstant {
   static String APP_NAME = "Calculadora UTP";
 
   static String APP_LOGO = "assets/images/logo.png";
+  static String CAR_WHEEL = 'assets/images/wheel.png';
 }

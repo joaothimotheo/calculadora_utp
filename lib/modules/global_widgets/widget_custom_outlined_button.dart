@@ -36,6 +36,7 @@ class _CustomOutlinedButtonState extends State<CustomOutlinedButton> {
         },
         child: Text(
           widget.text,
+          textAlign: TextAlign.center,
           style: poppinsRegular18White,
           overflow: TextOverflow.ellipsis,
           maxLines: 2,

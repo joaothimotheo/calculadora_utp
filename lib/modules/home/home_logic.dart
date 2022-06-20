@@ -4,6 +4,10 @@ import 'package:get/get.dart';
 class HomeLogic extends GetxController {
   final HomeState state = HomeState();
 
+  void pressSuspensio() {
+    state.suspension.value = !state.suspension.value;
+  }
+
   void getMember() {
     switch (state.groupId.value) {
       case 15:

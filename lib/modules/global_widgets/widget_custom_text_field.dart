@@ -18,6 +18,7 @@ class CustomTextField extends StatefulWidget {
     this.textInputAction,
     this.validator,
     this.controller,
+    this.prefixText,
   }) : super(key: key);
 
   final String? hint;
@@ -34,6 +35,7 @@ class CustomTextField extends StatefulWidget {
   final TextInputAction? textInputAction;
   final String? Function(String? value)? validator;
   final TextEditingController? controller;
+  final String? prefixText;
 
   @override
   _CustomTextFieldState createState() => _CustomTextFieldState();
@@ -51,7 +53,7 @@ class _CustomTextFieldState extends State<CustomTextField> {
       inputFormatters: widget.textInputFormatter,
       obscureText: widget.obscureText,
       decoration: InputDecoration(
-        prefixText: "Equipe: ",
+        prefixText: widget.prefixText,
         prefixIcon: Icon(widget.icon, color: Theme.of(context).primaryColor),
         suffixIcon: widget.isPassword
             ? IconButton(

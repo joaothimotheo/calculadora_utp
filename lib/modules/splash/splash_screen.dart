@@ -1,7 +1,6 @@
 import 'dart:async';
 
 import 'package:calculadora_utp/constant.dart';
-import 'package:calculadora_utp/modules/login/login_screen.dart';
 import 'package:calculadora_utp/routes/routes.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
