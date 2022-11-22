@@ -1,16 +1,7 @@
 # calculadora_utp
 
-A new Flutter project.
+Projeto feito para o Projeto inderdiciplinar do curso de Analise e desenvolvimento de sistemas na facudlade Tuiuti do Paraná referente ao terceiro perído. 
 
-## Getting Started
+No projeto era para criar uma aplicação, web, mobile ou desktop, com a linguagem que quiser eu optei por utilizar Flutter e montar um aplicativo mobile.
 
-This project is a starting point for a Flutter application.
-
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://flutter.dev/docs/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://flutter.dev/docs/cookbook)
-
-For help getting started with Flutter, view our
-[online documentation](https://flutter.dev/docs), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+A ideia da aplicação era montar uma calculadora para calcular a tração de um carro especifico de acordo com os dados fornecidos, esse trabalho foi realizado com o apoio da turma de engenharia que tinha os dados do carros, e nós criamos a calculadora para apoiarmos eles na criação do veiculo.
